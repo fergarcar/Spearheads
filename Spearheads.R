@@ -94,7 +94,7 @@ barplot(tabla_remache, main = "Grafico barras horizontales remache", col = rainb
         ylab = "Remache", xlab = "Frecuencia",
         horiz = TRUE)
 
-#Ejercicio 10.
+#Ejercicio 10. Genera graficos de barras agrupados 
 barplot(cross.matcond, width = 0.85, ylim = c(0,
        sum(cross.matcond [,1])*1.1),
        main = "Grafico de barras apilado",
@@ -103,7 +103,7 @@ barplot(cross.matcond, width = 0.85, ylim = c(0,
        legend = TRUE)
         
 
-#Ejercicio 11.
+#Ejercicio 11. Genera un grafico de sectores
 pie(tabla_conservacion, labels = tabla_conservacion, col = rainbow(4),
     clockwise = TRUE)
 
@@ -114,6 +114,16 @@ legend("topleft", legend = c("Excelente", "Bueno", "Regular", "Malo"),
 
 
 #Ejercicio 12. Genera un histograma de probabilidad de las variables
+hist <-data.frame(spear)
+
+barplot(table(hist$Materiales, hist$Contexto, hist$Conservacion, hist$Remache),
+        legend = TRUE,
+        col = rainbow(2, alpha = 4),
+        beside = TRUE,
+        main = "Histograma de probabilidad",
+        )
+
+
 set.seed(1)
 
 x <- rnorm(spear$Contexto)
