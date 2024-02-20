@@ -40,17 +40,21 @@ spear$Materiales=factor(spear$Materiales,levels=c(1,2), labels=c('Bronce', 'Hier
 View(spear)
 
 #Ejercicio 4. Generar tablas de frecuencias a tres de las variables
-tabla_materiales <- table(spear$Materiales)
-print (tabla_materiales)
-
 tabla_contexto <- table(spear$Contexto)
 print(tabla_contexto)
 
 tabla_conservacion <- table(spear$Conservacion)
 print (tabla_conservacion)
 
-#Ejercicio 5. Generar tablas cruzadas de porcentaje de materiales sobre contexto y conservacion
+tabla_materiales <- table(spear$Materiales)
+print(tabla_materiales)
 
+#Ejercicio 5. Generar tablas cruzadas de porcentaje de materiales sobre contexto y conservacion
+cross.matcon=table (spear$Materiales,spear$Contexto)
+print(cross.condcon)
+
+cross.matcond=table (spear$Materiales, spear$Conservacion)
+print (cross.matcond)
 
 #Ejercicio 6. Generar tablas de porcentaje de las variables materiales, contexto y conservacion
 porcentaje_materiales <- prop.table(table(spear$Materiales))
@@ -63,6 +67,14 @@ porcentaje_conservacion <- prop.table(table(spear$Conservacion))
 print(porcentaje_conservacion)
 
 #Ejercicio 7. Genera tablas cruzadas de porcentaje
+cruzada_porc_materiales= round(prop.table(table (porcentaje_materiales)))
+print(cruzada_porc_materiales)
+
+cruzada_porc_contexto = round(prop.table(table(spear$Contexto)))
+print(cruzada_porc_contexto)
+
+cruzada_porc_conservacion = round((prop.table(table(porcentaje_conservacion))))
+print(cruzada_porc_conservacion)
 
 
 #Ejercicio 8. Genera graficos de barras verticales para variables conservacion y contexto indicando la frecuencia de cada factor
@@ -83,6 +95,13 @@ barplot(tabla_remache, main = "Grafico barras horizontales remache", col = rainb
         horiz = TRUE)
 
 #Ejercicio 10.
+barplot(cruzada_porc_materiales, cruzada_porc_conservacion,
+        main = "Grafico de barras apilado",
+        xlab = "Materiales", ylab = "Conservacion",
+        col = c("yellow", "green"),
+        legend.text = rownames(cruzada_porc_materiales, cruzada_porc_conservacion),
+        beside = FALSE)
+
 
 #Ejercicio 11.
 
