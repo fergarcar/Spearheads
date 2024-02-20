@@ -95,12 +95,13 @@ barplot(tabla_remache, main = "Grafico barras horizontales remache", col = rainb
         horiz = TRUE)
 
 #Ejercicio 10.
-barplot(cruzada_porc_materiales, cruzada_porc_conservacion,
-        main = "Grafico de barras apilado",
-        xlab = "Materiales", ylab = "Conservacion",
-        col = c("yellow", "green"),
-        legend.text = rownames(cruzada_porc_materiales, cruzada_porc_conservacion),
-        beside = FALSE)
+barplot(cross.matcond, width = 0.85, ylim = c(0,
+       sum(cross.matcond [,1]*1.1),
+       main = "Grafico de barras apilado",
+       ylab = "Frecuencia",
+       col = c("yellow", "skyblue"),
+       legend=T)
+        
 
 
 #Ejercicio 11.
