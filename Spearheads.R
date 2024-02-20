@@ -104,9 +104,6 @@ barplot(cross.matcond, width = 0.85, ylim = c(0,
         
 
 #Ejercicio 11. Genera un grafico de sectores
-pie(tabla_conservacion, labels = tabla_conservacion, col = rainbow(4),
-    clockwise = TRUE)
-
 pie(tabla_conservacion, labels = paste0(tabla_conservacion, "%"))
 
 legend("topleft", legend = c("Excelente", "Bueno", "Regular", "Malo"),
