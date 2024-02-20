@@ -96,17 +96,24 @@ barplot(tabla_remache, main = "Grafico barras horizontales remache", col = rainb
 
 #Ejercicio 10.
 barplot(cross.matcond, width = 0.85, ylim = c(0,
-       sum(cross.matcond [,1]*1.1),
+       sum(cross.matcond [,1])*1.1),
        main = "Grafico de barras apilado",
        ylab = "Frecuencia",
        col = c("yellow", "skyblue"),
-       legend=T)
+       legend = TRUE)
         
 
-
 #Ejercicio 11.
+pie(tabla_conservacion, labels = tabla_conservacion, col = rainbow(4),
+    clockwise = TRUE)
 
-#Ejercucui 12. Genera un histograma de probabilidad de las variables
+pie(tabla_conservacion, labels = paste0(tabla_conservacion, "%"))
+
+legend("topleft", legend = c("Excelente", "Bueno", "Regular", "Malo"),
+       fill = c("lightgreen", "lightblue", "lightyellow", "pink"))
+
+
+#Ejercicio 12. Genera un histograma de probabilidad de las variables
 set.seed(1)
 
 x <- rnorm(spear$Contexto)
